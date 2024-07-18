@@ -7,7 +7,7 @@ sidebar_position: 1
 
 ## Intro
 
-이전 회사에서 근무할때 국제화 addon 기능을 활용하여 UI 컴포넌트를 테스트하기 위해 `Storybook` 도입을 담당했던 경험이 있습니다. Storybook v8은 yarn berry 버전 이상의 환경이 요구되었고 이를 대처하기 위한 마이그레이션 과정 중 `유령 종속성`과 `PnP`, `zero-install` 그리고 또 다른 패키지 매니저 `pnpm`을 알게되었습니다.  
+이전 회사에서 근무할때 국제화 addon 기능을 활용하여 UI 컴포넌트를 테스트하기 위해 `Storybook` 도입을 담당했던 경험이 있습니다. Storybook v8은 yarn berry 버전 이상의 환경이 요구되었고 이를 대처하기 위한 마이그레이션 과정 중 `유령 의존성`과 `PnP`, `zero-install` 그리고 또 다른 패키지 매니저 `pnpm`을 알게되었습니다.  
 <br/>
 결과적으로 yarn berry v4로 `zero-install`을 적용했지만, 당시 `unplugged` 용량이 적지 않아 가장 기대하고 있었던 `DX적인 부분`에서 드라마틱한 효과는 볼 수 없었습니다. 빌드 시간은 조금 줄어들었지만, `브랜치를 옮겨다닐때마다 종속성을 깔고 지우는 루틴`은 바뀌지 않았기 때문입니다.
 
@@ -15,7 +15,7 @@ sidebar_position: 1
 
 yarn에서도 [v4 릴리즈 노트에서 zero-install을 더이상 디폴트 설정으로 활성화하지 않겠다](https://yarnpkg.com/blog/release/4.0)는 결정을 했습니다. 케이스마다 효과가 다른 변동성을 가진 zero-install을 버린다면 확실하게 남는 기능은 `PnP`입니다.
 
-문득 yarn의 간판 기능인 `zero-install을 버리고 PnP만 차용하더라도 다른 패키지 매니저에 비하면 더 나은 선택일까?` 라는 의문이 들었습니다. 유령 종속성 문제를 해결하는 기능이라면 `pnpm`으로도 동일한 효과를 볼 수 있기 때문입니다.
+문득 yarn의 간판 기능인 `zero-install을 버리고 PnP만 차용하더라도 다른 패키지 매니저에 비하면 더 나은 선택일까?` 라는 의문이 들었습니다. 유령 의존성 문제를 해결하는 기능이라면 `pnpm`으로도 동일한 효과를 볼 수 있기 때문입니다.
 
 ### 그래서 zero-install을 사용하지 않는다면 yarn berry (with pnp) OR pnpm?
 
