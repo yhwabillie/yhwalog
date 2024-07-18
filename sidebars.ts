@@ -14,7 +14,7 @@ const sidebars: SidebarsConfig = {
   tutorialSidebar: [
     {
       type: 'category',
-      label: '🔬 실험실',
+      label: '🔬실험실',
       items: ['lab/without-zero-install-yarn-berry-or-pnpm'],
     },
   ],
