@@ -1,15 +1,16 @@
 import { themes as prismThemes } from 'prism-react-renderer'
 import type { Config } from '@docusaurus/types'
 import type * as Preset from '@docusaurus/preset-classic'
+import 'dotenv/config'
 
 const config: Config = {
   title: 'yhwalog',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
-  url: 'https://yhwabillie.github.io',
-  baseUrl: '/yhwalog/',
-  organizationName: 'yhwabillie',
-  projectName: 'yhwalog',
+  url: process.env.WEBSITE_URL,
+  baseUrl: process.env.BASE_URL,
+  organizationName: process.env.ORGANIZATION_NAME,
+  projectName: process.env.PROJECT_NAME,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   i18n: {
@@ -26,6 +27,9 @@ const config: Config = {
         },
         theme: {
           customCss: './src/css/custom.css',
+        },
+        googleTagManager: {
+          containerId: process.env.GOOGLE_TAG_ID,
         },
       } satisfies Preset.Options,
     ],
