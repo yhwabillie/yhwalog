@@ -3,6 +3,8 @@ title: Zero-Install 없이 Yarn berry OR PNPM?
 sidebar_position: 1
 ---
 
+과연 Zero-Install을 쓰지 않는 Yarn berry는 앙코없는 찜빵이 될까요?🧑‍🍳
+
 ## Intro
 
 이전 회사에서 근무할때 국제화 addon 기능을 활용하여 UI 컴포넌트를 테스트하기 위해 `Storybook` 도입을 담당했던 경험이 있습니다. Storybook v8은 yarn berry 버전 이상의 환경이 요구되었고 이를 대처하기 위한 마이그레이션 과정 중 `유령 종속성`과 `PnP`, `zero-install` 그리고 또 다른 패키지 매니저 `pnpm`을 알게되었습니다.  
