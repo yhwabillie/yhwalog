@@ -31,10 +31,26 @@ const config: Config = {
         googleTagManager: {
           containerId: process.env.GOOGLE_TAG_ID,
         },
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
+          createSitemapItems: async (params) => {
+            const { defaultCreateSitemapItems, ...rest } = params
+            const items = await defaultCreateSitemapItems(rest)
+            return items.filter((item) => !item.url.includes('/yhwalog/'))
+          },
+        },
       } satisfies Preset.Options,
     ],
   ],
   themeConfig: {
+    metadata: [
+      { name: 'keywords', content: 'yhwalog, 기술 블로그, 프론트 개발, 웹 개발, 웹, 프론트 개발자, 웹 퍼블리셔, 웹퍼블리셔, UI, UX' },
+      { name: 'robots', content: 'index, follow' },
+    ],
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: 'yhwalog',
